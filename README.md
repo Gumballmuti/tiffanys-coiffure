@@ -21,8 +21,7 @@ service tiers et ne dépose aucun cookie.
 ## Mentions légales
 
 La page `mentions-legales.html` contient les mentions légales, la politique de
-confidentialité et la politique de cookies. Les champs surlignés « À compléter »
-(numéro de TVA) doivent être remplis avant la mise en ligne.
+confidentialité et la politique de cookies.
 
 ## Formulaire de rendez-vous
 
