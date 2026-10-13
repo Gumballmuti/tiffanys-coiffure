@@ -1,3 +1,10 @@
+/* Polices hébergées sur le site (aucune requête vers un service tiers) */
+@font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 400 900; font-display: swap; src: url("fonts/bodoni-moda.woff2") format("woff2"); }
+@font-face { font-family: "Bodoni Moda"; font-style: italic; font-weight: 400 900; font-display: swap; src: url("fonts/bodoni-moda-italique.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 300; font-display: swap; src: url("fonts/jost-300.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/jost-400.woff2") format("woff2"); }
+@font-face { font-family: "Jost"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/jost-500.woff2") format("woff2"); }
+
 /* Mise en page : éditorial asymétrique, grandes respirations, sections alternant porcelaine / poudre / ébène.
    Un seul univers de couleurs (clair, chaud), assumé comme identité de marque. */
 :root {
@@ -148,7 +155,7 @@ a { color: inherit; }
   box-shadow: 0 1px 0 var(--filet);
 }
 .entete.est-plein .entete__inner { height: 68px; }
-.entete.est-plein .marque .logo { width: 112px; }
+.entete.est-plein .marque .logo { width: 96px; }
 .marque .logo { transition: width 0.5s var(--ease); }
 .entete.est-cache { transform: translateY(-100%); }
 .menu-ouvert .entete .marque { opacity: 0; pointer-events: none; }
@@ -164,9 +171,7 @@ a { color: inherit; }
   display: inline-flex;
   flex-direction: column;
 }
-.marque .logo { width: 128px; }
-.marque .logo__repli { font-size: 1.65rem; }
-.entete .logo img { transition: filter 0.5s var(--ease); }
+.marque .logo { width: 112px; }
 .marque small {
   font-family: var(--f-texte);
   font-size: 0.56rem;
@@ -303,20 +308,8 @@ a { color: inherit; }
 }
 @keyframes goutte { to { top: 100%; } }
 
-/* Logo manuscrit : le papier devient transparent grâce au contraste + fusion */
-.logo { position: relative; display: block; background: var(--porcelaine); }
-.logo--clair { background: var(--ebene); }
-.logo img {
-  width: 100%; height: auto;
-  filter: grayscale(1) contrast(1.9) brightness(1.18);
-  mix-blend-mode: multiply;
-}
-.logo--clair img { filter: grayscale(1) contrast(1.9) brightness(1.18) invert(1); mix-blend-mode: screen; }
-.logo__repli { display: none; font-family: var(--f-display); font-style: italic; font-weight: 400; line-height: 0.95; }
-.logo.sans-image img { display: none; }
-.logo.sans-image .logo__repli { display: block; }
-.heros__nom .logo__repli { font-size: clamp(4.2rem, 12vw, 9.5rem); letter-spacing: -0.03em; }
-.heros__nom .logo__repli small { display: block; font-family: var(--f-texte); font-style: normal; font-size: 0.8rem; letter-spacing: 0.5em; text-transform: uppercase; margin-top: 18px; }
+/* Logo manuscrit (fond transparent) */
+.logo { display: block; width: 100%; height: auto; }
 
 /* Image manquante : cadre élégant avec monogramme */
 .cadre-img { position: relative; background: var(--poudre); }
@@ -330,7 +323,6 @@ a { color: inherit; }
 }
 .heros__cadre::before { color: rgba(216, 193, 155, 0.18); }
 .cadre-img img { position: relative; }
-img.manquante { visibility: hidden; }
 
 /* ---------- Bandeau défilant ---------- */
 .bandeau {
@@ -444,7 +436,7 @@ img.manquante { visibility: hidden; }
 }
 .section--ebene { overflow: hidden; }
 .soin__visuel { position: relative; min-width: 0; padding-bottom: 64px; }
-.soin__cadre { aspect-ratio: 0.75; max-width: 100%; overflow: hidden; background: #2a2320; margin-left: auto; width: min(100%, 400px); }
+.soin__cadre { aspect-ratio: 0.75; max-width: 100%; overflow: hidden; background: #2a2320; margin-left: auto; width: min(100%, 360px); }
 .soin__cadre img { width: 100%; height: 118%; object-fit: cover; will-change: transform; }
 .soin__cadre.cadre-img::before { color: rgba(216, 193, 155, 0.18); }
 .soin__horaires { position: absolute; left: 0; bottom: 0; width: min(88%, 360px); border: 1px solid var(--filet-clair); padding: clamp(24px, 3vw, 36px); display: grid; gap: 16px; z-index: 1; background: rgba(23, 19, 17, 0.92); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
@@ -473,10 +465,6 @@ img.manquante { visibility: hidden; }
 .pied { background: var(--ebene); color: rgba(246, 243, 239, 0.7); padding-block: 72px calc(36px + env(safe-area-inset-bottom, 0px)); font-size: 0.9rem; }
 .pied__haut { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; padding-bottom: 48px; border-bottom: 1px solid var(--filet-clair); }
 .pied .marque { color: var(--porcelaine); font-size: clamp(2.6rem, 6vw, 4.2rem); }
-.pied .marque .logo { width: 128px; }
-.marque .logo__repli { font-size: 1.65rem; }
-.entete .logo img { transition: filter 0.5s var(--ease); }
-.marque small { color: var(--champagne-clair); opacity: 1; }
 .reseaux { display: flex; gap: 12px; }
 .reseaux a {
   width: 46px; height: 46px; border: 1px solid var(--filet-clair); border-radius: 50%;
@@ -583,5 +571,27 @@ img.manquante { visibility: hidden; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
-.pied__logo .logo { width: clamp(180px, 22vw, 260px); }
-.pied__logo .logo__repli { font-size: clamp(2.6rem, 6vw, 4.2rem); color: var(--porcelaine); }
+.pied .pied__logo .logo { width: clamp(180px, 22vw, 260px); }
+.consentement { display: grid; gap: 6px; }
+.consentement label { display: flex; gap: 14px; align-items: flex-start; font-size: 0.92rem; color: var(--taupe); cursor: pointer; }
+.consentement input { appearance: none; -webkit-appearance: none; flex-shrink: 0; width: 20px; height: 20px; margin: 3px 0 0; border: 1px solid rgba(43, 36, 32, 0.4); border-radius: 0; background: transparent; display: grid; place-items: center; cursor: pointer; transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease); }
+.consentement input::after { content: ""; width: 10px; height: 5px; border-left: 1.5px solid var(--porcelaine); border-bottom: 1.5px solid var(--porcelaine); transform: rotate(-45deg) translate(1px, -1px); opacity: 0; }
+.consentement input:checked { background: var(--ebene); border-color: var(--ebene); }
+.consentement input:checked::after { opacity: 1; }
+.consentement a { color: var(--encre); }
+
+/* ---------- Page mentions légales ---------- */
+.sommaire { display: flex; flex-wrap: wrap; gap: 10px 32px; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.sommaire a { text-decoration: none; }
+.legal { display: grid; gap: clamp(56px, 8vw, 96px); padding-bottom: clamp(80px, 12vw, 160px); max-width: 860px; margin-inline: 0; }
+.legal__bloc { display: grid; gap: 16px; scroll-margin-top: 110px; border-top: 1px solid var(--filet); padding-top: clamp(32px, 4vw, 48px); }
+.legal__bloc h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1.1; margin: 0 0 8px; }
+.legal__bloc h3 { font-family: var(--f-texte); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--champagne-fonce); margin: 20px 0 0; }
+.legal__bloc p { margin: 0; max-width: 65ch; }
+.legal__fiche { margin: 0; display: grid; border-top: 1px solid var(--filet); }
+.legal__fiche div { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 8px 24px; padding-block: 14px; border-bottom: 1px solid var(--filet); }
+.legal__fiche dt { font-size: 0.85rem; color: var(--taupe); }
+.legal__fiche dd { margin: 0; }
+.legal__maj { font-size: 0.85rem; color: var(--taupe); }
+.a-completer { background: #f3d9a7; color: #5a3d0c; padding: 1px 6px; font-size: 0.9em; }
+@media (max-width: 560px) { .legal__fiche div { grid-template-columns: minmax(0, 1fr); } }

@@ -196,6 +196,7 @@
     ok = erreur("date", msgDate) && ok;
 
     ok = erreur("creneau", !form.querySelector('input[name="creneau"]:checked') ? "Choisissez un créneau." : "") && ok;
+    ok = erreur("accord", !form.accord.checked ? "Cochez cette case pour que nous puissions traiter votre demande." : "") && ok;
     return ok;
   }
 
@@ -205,6 +206,7 @@
   form.addEventListener("change", function (e) {
     if (e.target.name === "soin") erreur("soin", "");
     if (e.target.name === "creneau") erreur("creneau", "");
+    if (e.target.name === "accord") erreur("accord", "");
   });
 
   function dateLisible(valeur) {
@@ -213,14 +215,13 @@
     return d.toLocaleDateString("fr-BE", { weekday: "long", day: "numeric", month: "long" });
   }
 
-  function afficherConfirmation(apercu) {
+  function afficherConfirmation() {
     var prenom = form.nom.value.trim().split(/\s+/).slice(-1)[0];
     var creneau = form.querySelector('input[name="creneau"]:checked').value.replace(" - ", " – ");
     document.getElementById("conf-prenom").textContent = prenom || "à très bientôt";
     document.getElementById("conf-texte").textContent =
       "Votre demande pour le " + dateLisible(champDate.value) + " (" + creneau + ") est bien envoyée. " +
       "Nous vous contacterons par SMS au " + form.telephone.value.trim() + " pour confirmer votre rendez-vous.";
-    document.getElementById("conf-apercu").hidden = !apercu;
     var conf = document.getElementById("confirmation");
     form.hidden = true;
     conf.hidden = false;
@@ -237,8 +238,6 @@
       if (premiere) premiere.closest("fieldset, .champ").scrollIntoView({ behavior: reduit ? "auto" : "smooth", block: "center" });
       return;
     }
-    if (window.TIFFANYS_APERCU) { afficherConfirmation(true); return; }
-
     var bouton = document.getElementById("envoyer");
     bouton.disabled = true;
     fetch("/", {
@@ -247,7 +246,7 @@
       body: new URLSearchParams(new FormData(form)).toString()
     }).then(function (r) {
       if (!r.ok) throw new Error(r.status);
-      afficherConfirmation(false);
+      afficherConfirmation();
     }).catch(function () {
       erreur("envoi", "L’envoi n’a pas abouti. Réessayez dans un instant ou appelez-nous au 0492 79 49 39.");
     }).then(function () {

@@ -4,18 +4,25 @@ Nouveau site du salon Tiffany’s (Liège), qui remplace le site Webador www.tif
 
 ## Fichiers
 
-- `index.html` : accueil (philosophie, prestations et tarifs, horaires, avis, contact)
+- `index.html` : accueil (philosophie, prestations et tarifs, horaires, contact)
 - `prendre-rendez-vous.html` : formulaire de prise de rendez-vous
+- `mentions-legales.html` : mentions légales, confidentialité et cookies
 - `assets/style.css` : styles
-- `assets/main.js` : animations au défilement (GSAP) et formulaire
+- `assets/main.js` : animations au défilement et formulaire
 
 Le site est en HTML, CSS et JavaScript simples, sans étape de compilation.
 
-## Photos
+## Photos, polices et scripts
 
-Les photos sont encore chargées depuis l’hébergement Webador (`primary.jwwb.nl`).
-Avant de résilier Webador, il faut télécharger les photos dans un dossier
-`assets/images/` et remplacer les adresses dans les deux pages HTML.
+Tout est hébergé dans le dossier `assets/` : photos (`assets/images/`), polices
+(`assets/fonts/`) et animations GSAP (`assets/js/`). Le site ne fait appel à aucun
+service tiers et ne dépose aucun cookie.
+
+## Mentions légales
+
+La page `mentions-legales.html` contient les mentions légales, la politique de
+confidentialité et la politique de cookies. Les champs surlignés « À compléter »
+(exploitant, e-mail, numéro BCE, TVA) doivent être remplis avant la mise en ligne.
 
 ## Formulaire de rendez-vous
 
