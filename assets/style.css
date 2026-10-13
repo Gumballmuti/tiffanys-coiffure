@@ -455,24 +455,6 @@ img.manquante { visibility: hidden; }
 .horaires .ferme dd { color: rgba(246, 243, 239, 0.5); font-style: italic; }
 .mention { font-family: var(--f-display); font-style: italic; font-size: 1.15rem; color: var(--porcelaine); margin: 0; }
 
-/* Avis */
-.avis__tete { display: grid; gap: 22px; justify-items: center; text-align: center; margin-bottom: clamp(48px, 7vw, 88px); }
-.avis__tete .eyebrow::after { content: ""; width: 2.4em; height: 1px; background: currentColor; }
-.avis__grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
-.avis__carte {
-  margin: 0;
-  background: var(--porcelaine);
-  padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 40px);
-  display: grid; gap: 22px; align-content: start;
-  transition: transform 0.7s var(--ease), box-shadow 0.7s var(--ease);
-}
-.avis__carte:hover { transform: translateY(-8px); box-shadow: 0 30px 60px -30px rgba(43, 36, 32, 0.35); }
-.avis__guillemet { font-family: var(--f-display); font-size: 4.6rem; line-height: 0.5; color: var(--champagne); height: 0.5em; margin-top: 0.3em; }
-.avis__carte blockquote { margin: 0; font-family: var(--f-display); font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.5; }
-.avis__carte figcaption { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--taupe); display: flex; align-items: center; gap: 12px; }
-.avis__carte figcaption::before { content: ""; width: 24px; height: 1px; background: var(--champagne); }
-.etoiles { color: var(--champagne); letter-spacing: 0.3em; font-size: 0.8rem; }
-
 /* Visite */
 .visite { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 120px); align-items: end; }
 .visite__bloc { display: grid; gap: 26px; min-width: 0; }
@@ -583,7 +565,6 @@ img.manquante { visibility: hidden; }
   .heros::before { width: 100%; top: auto; height: 34%; }
   .heros__legende { display: none; }
   .tarifs__intro, .rdv-aside { position: static; }
-  .avis__grille { grid-template-columns: minmax(0, 1fr); }
   .philo__visuel { margin-right: 24px; }
   .defiler { display: none; }
 }

@@ -133,15 +133,6 @@
       });
     }
 
-    // Avis : les cartes montent en cascade
-    var avis = document.getElementById("avis-grille");
-    if (avis) {
-      gsap.from(avis.children, {
-        y: 70, opacity: 0, duration: 1.3, ease: ease, stagger: 0.15,
-        scrollTrigger: { trigger: avis, start: "top 85%" }
-      });
-    }
-
     // Grande devise en filigrane qui glisse avec le défilement
     var geant = document.getElementById("geant");
     if (geant) {
