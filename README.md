@@ -22,7 +22,7 @@ service tiers et ne dépose aucun cookie.
 
 La page `mentions-legales.html` contient les mentions légales, la politique de
 confidentialité et la politique de cookies. Les champs surlignés « À compléter »
-(exploitant, e-mail, numéro BCE, TVA) doivent être remplis avant la mise en ligne.
+(numéro de TVA) doivent être remplis avant la mise en ligne.
 
 ## Formulaire de rendez-vous
 
