@@ -531,7 +531,7 @@ a { color: inherit; }
 .confirmation .titre { font-size: clamp(2rem, 4vw, 3rem); }
 
 .rdv-aside { display: grid; gap: 32px; position: sticky; top: 110px; min-width: 0; }
-.rdv-aside__cadre { aspect-ratio: 1.0372; max-width: 100%; overflow: hidden; }
+.rdv-aside__cadre { aspect-ratio: 0.75; width: min(100%, 347px); max-width: 100%; overflow: hidden; }
 .rdv-aside__cadre img { width: 100%; height: 118%; object-fit: cover; }
 .carte-contact { background: var(--ebene); color: var(--porcelaine); padding: clamp(28px, 3vw, 40px); display: grid; gap: 18px; }
 .carte-contact .eyebrow { color: var(--champagne-clair); }
