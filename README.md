@@ -25,13 +25,12 @@ confidentialité et la politique de cookies.
 
 ## Formulaire de rendez-vous
 
-Le formulaire est prévu pour **Netlify Forms** (attribut `data-netlify="true"`).
-Une fois le site publié sur Netlify, les demandes apparaissent dans
-l’onglet « Forms » du projet Netlify, et une notification par e-mail peut être activée.
-Sur un autre hébergeur, il faut brancher un autre service d’envoi
-(par exemple Formspree) dans `assets/main.js`.
+Le site est hébergé sur Vercel, qui ne traite pas les formulaires lui-même.
+Il faut brancher un service d’envoi (par exemple Formspree ou Web3Forms)
+dans `assets/main.js` pour que les demandes arrivent dans la boîte mail du salon.
+En attendant, un envoi affiche un message invitant à appeler le 0492 79 49 39.
 
 ## Mise en ligne
 
-1. Publier le dossier `Tiffanys-Coiffure` sur Netlify (glisser-déposer ou lien GitHub).
-2. Relier le domaine `tiffany-s.be` au projet Netlify.
+1. Publier le dossier `Tiffanys-Coiffure` sur Vercel.
+2. Relier le domaine `tiffany-s.be` au projet Vercel.
