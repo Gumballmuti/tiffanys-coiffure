@@ -477,16 +477,30 @@ a { color: inherit; }
 .pied__bas nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
 .pied__bas a { text-decoration: none; }
 
+/* ---------- Page rendez-vous ---------- */
+.rdv-tete { padding-block: calc(150px + env(safe-area-inset-top, 0px)) clamp(48px, 6vw, 80px); }
+.rdv-tete .wrap { display: grid; gap: 24px; }
+.rdv-tete .titre { font-size: clamp(2.8rem, 8vw, 6.6rem); }
+.rdv { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(40px, 6vw, 96px); align-items: start; padding-bottom: clamp(80px, 12vw, 160px); }
+.rdv-cal { min-width: 0; min-height: 640px; }
+
+.rdv-aside { display: grid; gap: 32px; position: sticky; top: 110px; min-width: 0; }
+.carte-contact { background: var(--ebene); color: var(--porcelaine); padding: clamp(28px, 3vw, 40px); display: grid; gap: 18px; }
+.carte-contact .eyebrow { color: var(--champagne-clair); }
+.carte-contact p { margin: 0; color: rgba(246, 243, 239, 0.75); }
+.carte-contact .tel { font-family: var(--f-display); font-size: clamp(1.6rem, 2.6vw, 2.1rem); color: var(--porcelaine); text-decoration: none; font-variant-numeric: lining-nums; }
+.carte-contact .horaires div { padding-block: 10px; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .nav { display: none; }
   .burger { display: block; }
-  .heros__grille, .philo, .tarifs, .soin, .visite { grid-template-columns: minmax(0, 1fr); }
+  .heros__grille, .philo, .tarifs, .soin, .visite, .rdv { grid-template-columns: minmax(0, 1fr); }
   .heros { align-items: flex-start; }
   .heros__visuel { justify-self: start; max-width: 400px; width: calc(100% - 24px); }
   .heros::before { width: 100%; top: auto; height: 34%; }
   .heros__legende { display: none; }
-  .tarifs__intro { position: static; }
+  .tarifs__intro, .rdv-aside { position: static; }
   .philo__visuel { margin-right: 24px; }
   .defiler { display: none; }
 }
