@@ -81,7 +81,7 @@
     }
     intro.from("[data-intro-filet]", { scaleX: 0, duration: 1.4 }, 1.2)
          .from("[data-intro]", { y: 28, opacity: 0, duration: 1.2, stagger: 0.12 }, 0.9)
-         .from(".entete", { y: -30, opacity: 0, duration: 1.2 }, 0.6)
+         .from(".entete__inner", { y: -24, opacity: 0, duration: 1.2, clearProps: "transform,opacity" }, 0.6)
          .from(".heros__legende, .defiler", { opacity: 0, duration: 1.2 }, 1.6);
 
     // Parallaxe de la photo du héros

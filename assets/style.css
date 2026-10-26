@@ -155,7 +155,7 @@ a { color: inherit; }
   box-shadow: 0 1px 0 var(--filet);
 }
 .entete.est-plein .entete__inner { height: 68px; }
-.entete.est-plein .marque .logo { width: 96px; }
+.entete.est-plein .marque .logo { width: 110px; }
 .marque .logo { transition: width 0.5s var(--ease); }
 .entete.est-cache { transform: translateY(-100%); }
 .menu-ouvert .entete .marque { opacity: 0; pointer-events: none; }
@@ -171,7 +171,7 @@ a { color: inherit; }
   display: inline-flex;
   flex-direction: column;
 }
-.marque .logo { width: 112px; }
+.marque .logo { width: 132px; }
 .marque small {
   font-family: var(--f-texte);
   font-size: 0.56rem;
