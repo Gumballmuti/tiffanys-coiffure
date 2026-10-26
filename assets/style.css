@@ -477,85 +477,20 @@ a { color: inherit; }
 .pied__bas nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
 .pied__bas a { text-decoration: none; }
 
-/* ---------- Page rendez-vous ---------- */
-.rdv-tete { padding-block: calc(150px + env(safe-area-inset-top, 0px)) clamp(48px, 6vw, 80px); }
-.rdv-tete .wrap { display: grid; gap: 24px; }
-.rdv-tete .titre { font-size: clamp(2.8rem, 8vw, 6.6rem); }
-.rdv { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(40px, 6vw, 96px); align-items: start; padding-bottom: clamp(80px, 12vw, 160px); }
-.formulaire { display: grid; gap: clamp(40px, 5vw, 56px); min-width: 0; }
-.etape { border: 0; margin: 0; padding: 0; display: grid; gap: 22px; min-width: 0; }
-.etape legend { padding: 0; margin-bottom: 22px; display: flex; align-items: baseline; gap: 16px; width: 100%; border-bottom: 1px solid var(--filet); padding-bottom: 14px; }
-.etape legend b { font-family: var(--f-display); font-style: italic; font-weight: 400; font-size: 1.6rem; color: var(--champagne-fonce); font-variant-numeric: lining-nums; }
-.etape legend span { font-family: var(--f-display); font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
-.champs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 28px; }
-.champ { display: grid; gap: 8px; min-width: 0; }
-.champ--large { grid-column: 1 / -1; }
-.champ label, .groupe-titre { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--taupe); }
-.champ input, .champ textarea {
-  width: 100%;
-  font: inherit; font-weight: 300;
-  color: var(--encre);
-  background: transparent;
-  border: 0; border-bottom: 1px solid rgba(43, 36, 32, 0.3);
-  border-radius: 0;
-  padding: 10px 0 12px;
-  transition: border-color 0.4s var(--ease);
-}
-.champ textarea { min-height: 120px; resize: vertical; }
-.champ input:focus, .champ textarea:focus { outline: none; border-bottom-color: var(--champagne-fonce); box-shadow: 0 1px 0 var(--champagne-fonce); }
-.champ input::placeholder, .champ textarea::placeholder { color: rgba(111, 100, 92, 0.6); }
-.aide { font-size: 0.82rem; color: var(--taupe); margin: 0; }
-.erreur { font-size: 0.82rem; color: #9b3b2b; margin: 0; min-height: 1.2em; }
-
-.choix { display: flex; flex-wrap: wrap; gap: 10px; }
-.choix label { position: relative; cursor: pointer; }
-.choix input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-.choix span {
-  display: inline-block;
-  padding: 0.75em 1.25em;
-  border: 1px solid rgba(43, 36, 32, 0.25);
-  font-size: 0.92rem;
-  line-height: 1.3;
-  transition: background-color 0.4s var(--ease), color 0.4s var(--ease), border-color 0.4s var(--ease);
-}
-.choix label:hover span { border-color: var(--encre); }
-.choix input:checked + span { background: var(--ebene); border-color: var(--ebene); color: var(--porcelaine); }
-.choix input:focus-visible + span { outline: 1px solid var(--champagne-fonce); outline-offset: 3px; }
-.choix--creneaux span { font-variant-numeric: tabular-nums; min-width: 9.5em; text-align: center; }
-
-.formulaire__envoi { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; }
-.formulaire__envoi .aide { max-width: 26em; }
-.cache { display: none; }
-
-.confirmation { display: grid; gap: 22px; justify-items: start; padding: clamp(32px, 5vw, 56px); background: var(--poudre); }
-.confirmation .titre { font-size: clamp(2rem, 4vw, 3rem); }
-
-.rdv-aside { display: grid; gap: 32px; position: sticky; top: 110px; min-width: 0; }
-.carte-contact { background: var(--ebene); color: var(--porcelaine); padding: clamp(28px, 3vw, 40px); display: grid; gap: 18px; }
-.carte-contact .eyebrow { color: var(--champagne-clair); }
-.carte-contact p { margin: 0; color: rgba(246, 243, 239, 0.75); }
-.carte-contact .tel { font-family: var(--f-display); font-size: clamp(1.6rem, 2.6vw, 2.1rem); color: var(--porcelaine); text-decoration: none; font-variant-numeric: lining-nums; }
-.carte-contact .horaires div { padding-block: 10px; }
-.carte-contact__portrait { display: flex; gap: 16px; align-items: center; }
-.carte-contact__portrait .cadre-img { width: 64px; aspect-ratio: 0.75; flex-shrink: 0; overflow: hidden; background: #2a2320; }
-.carte-contact__portrait .cadre-img::before { font-size: 1.6rem; color: rgba(216, 193, 155, 0.3); }
-.carte-contact__portrait img { width: 100%; height: 100%; object-fit: cover; }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .nav { display: none; }
   .burger { display: block; }
-  .heros__grille, .philo, .tarifs, .soin, .visite, .rdv { grid-template-columns: minmax(0, 1fr); }
+  .heros__grille, .philo, .tarifs, .soin, .visite { grid-template-columns: minmax(0, 1fr); }
   .heros { align-items: flex-start; }
   .heros__visuel { justify-self: start; max-width: 400px; width: calc(100% - 24px); }
   .heros::before { width: 100%; top: auto; height: 34%; }
   .heros__legende { display: none; }
-  .tarifs__intro, .rdv-aside { position: static; }
+  .tarifs__intro { position: static; }
   .philo__visuel { margin-right: 24px; }
   .defiler { display: none; }
 }
 @media (max-width: 560px) {
-  .champs { grid-template-columns: minmax(0, 1fr); }
   .philo__faits { grid-template-columns: minmax(0, 1fr); }
   .philo__faits div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--filet); margin-top: 18px; }
   .coordonnees { grid-template-columns: minmax(0, 1fr); }
