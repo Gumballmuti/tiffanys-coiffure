@@ -40,27 +40,6 @@
     });
   }
 
-  /* ---------- Bandeau défilant (accélère avec le défilement) ---------- */
-  var piste = document.getElementById("bandeau");
-  if (piste && !reduit) {
-    var x = 0, vitesse = 0.45, boost = 0, sens = -1, precedent = window.scrollY;
-    window.addEventListener("scroll", function () {
-      var d = window.scrollY - precedent;
-      precedent = window.scrollY;
-      if (d !== 0) sens = d > 0 ? -1 : 1;
-      boost = Math.min(Math.abs(d) * 0.35, 14);
-    }, { passive: true });
-    (function boucle() {
-      var largeur = piste.scrollWidth / 2;
-      x += sens * (vitesse + boost);
-      boost *= 0.92;
-      if (x <= -largeur) x += largeur;
-      if (x > 0) x -= largeur;
-      piste.style.transform = "translate3d(" + x + "px,0,0)";
-      requestAnimationFrame(boucle);
-    })();
-  }
-
   /* ---------- Animations GSAP ---------- */
   var gsap = window.gsap;
   var ST = window.ScrollTrigger;

@@ -324,26 +324,6 @@ a { color: inherit; }
 .heros__cadre::before { color: rgba(216, 193, 155, 0.18); }
 .cadre-img img { position: relative; }
 
-/* ---------- Bandeau défilant ---------- */
-.bandeau {
-  background: var(--porcelaine);
-  border-bottom: 1px solid var(--filet);
-  overflow: hidden;
-  padding-block: clamp(20px, 3vw, 34px);
-}
-.bandeau__piste { display: flex; width: max-content; will-change: transform; }
-.bandeau__groupe { display: flex; align-items: center; flex-shrink: 0; }
-.bandeau__groupe span {
-  font-family: var(--f-display);
-  font-size: clamp(1.8rem, 4.4vw, 3.6rem);
-  font-style: italic;
-  line-height: 1.1;
-  white-space: nowrap;
-  padding-inline: clamp(18px, 2.4vw, 36px);
-}
-.bandeau__groupe span:nth-child(even) { font-style: normal; color: transparent; -webkit-text-stroke: 1px var(--encre); }
-.bandeau__groupe b { width: 9px; height: 9px; border: 1px solid var(--champagne); transform: rotate(45deg); flex-shrink: 0; }
-
 /* ---------- Sections ---------- */
 .section { padding-block: clamp(80px, 12vw, 168px); position: relative; }
 .section--poudre { background: var(--poudre); }
